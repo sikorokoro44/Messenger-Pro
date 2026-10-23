@@ -1,0 +1,2949 @@
+{
+  "note": "Only COMPLETE entries have implementation plus automated test evidence. BLOCKED entries require an external service that is not configured. Everything else is untouched.",
+  "overrides": {
+    "MP-007": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#logoutRevokesSession"
+      ]
+    },
+    "MP-008": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#resetPasswordUsesVerificationCode"
+      ]
+    },
+    "MP-009": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#changePasswordRevokesSessionsAndWorks"
+      ]
+    },
+    "MP-010": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#registersAndFindsAccount"
+      ]
+    },
+    "MP-011": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#registersAndFindsAccount"
+      ]
+    },
+    "MP-012": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#registersAndFindsAccount"
+      ]
+    },
+    "MP-018": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#togglesAllPreferences"
+      ]
+    },
+    "MP-021": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#preventsDuplicateRegistration"
+      ]
+    },
+    "MP-022": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#resetPasswordUsesVerificationCode"
+      ]
+    },
+    "MP-026": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#deletionRequiresToken"
+      ]
+    },
+    "MP-027": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#deletionRequiresToken"
+      ]
+    },
+    "MP-028": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/AuthEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/AuthEngineTest#exportsAccountData"
+      ]
+    },
+    "MP-031": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#addIsIdempotentAndListsSorted"
+      ]
+    },
+    "MP-032": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#sendsBetweenAccountsAndBlocks"
+      ]
+    },
+    "MP-036": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#nicknameAndSearch"
+      ]
+    },
+    "MP-038": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#addIsIdempotentAndListsSorted"
+      ]
+    },
+    "MP-039": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#groupsAndRingtone"
+      ]
+    },
+    "MP-040": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#groupsAndRingtone"
+      ]
+    },
+    "MP-041": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#groupsAndRingtone"
+      ]
+    },
+    "MP-042": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#groupsAndRingtone"
+      ]
+    },
+    "MP-045": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#nicknameAndSearch"
+      ]
+    },
+    "MP-046": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#groupsAndRingtone"
+      ]
+    },
+    "MP-048": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#blockAndHide"
+      ]
+    },
+    "MP-049": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#blockAndHide"
+      ]
+    },
+    "MP-051": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#blockAndHide"
+      ]
+    },
+    "MP-052": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#blockAndHide"
+      ]
+    },
+    "MP-059": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ContactEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ContactEngineTest#addIsIdempotentAndListsSorted"
+      ]
+    },
+    "MP-091": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-092": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-093": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-099": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#logsActivity"
+      ]
+    },
+    "MP-100": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#logoutClearsActiveSession"
+      ]
+    },
+    "MP-105": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#recordsFiltersAndSearches"
+      ]
+    },
+    "MP-106": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#recordsFiltersAndSearches"
+      ]
+    },
+    "MP-107": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-108": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#recordsFiltersAndSearches"
+      ]
+    },
+    "MP-109": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-110": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-111": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#reportsTimeWindows"
+      ]
+    },
+    "MP-112": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#exportsAndClears"
+      ]
+    },
+    "MP-114": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ActivityEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/ActivityEngineTest#exportsAndClears"
+      ]
+    },
+    "MP-115": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#persistsAndHydrates"
+      ]
+    },
+    "MP-119": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#persistsAndHydrates"
+      ]
+    },
+    "MP-120": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#messagesAreChronologicalWithTimestamps"
+      ]
+    },
+    "MP-121": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#messagesAreChronologicalWithTimestamps"
+      ]
+    },
+    "MP-127": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#onlySenderCanEditOrDeleteForEveryone"
+      ]
+    },
+    "MP-128": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#onlySenderCanEditOrDeleteForEveryone"
+      ]
+    },
+    "MP-129": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#onlySenderCanEditOrDeleteForEveryone"
+      ]
+    },
+    "MP-130": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#editTracksEditedTimestamp"
+      ]
+    },
+    "MP-131": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-132": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-133": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-135": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-137": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-139": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#unreadAndMarkRead"
+      ]
+    },
+    "MP-142": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#disappearingMessagesExpire"
+      ]
+    },
+    "MP-143": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#disappearingMessagesExpire"
+      ]
+    },
+    "MP-144": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#searchMatchesBodyAndTranscript"
+      ]
+    },
+    "MP-148": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#conversationPreferences"
+      ]
+    },
+    "MP-151": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#unreadAndMarkRead"
+      ]
+    },
+    "MP-152": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#roundTripsPayload",
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#persistsAndHydrates"
+      ]
+    },
+    "MP-154": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#deduplicatesByClientId"
+      ]
+    },
+    "MP-162": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+      ]
+    },
+    "MP-163": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+      ]
+    },
+    "MP-164": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#deduplicatesByClientId"
+      ]
+    },
+    "MP-167": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#togglesAllPreferences"
+      ]
+    },
+    "MP-169": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#reactionsReplaceOwnAndRemove"
+      ]
+    },
+    "MP-170": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#reactionsReplaceOwnAndRemove"
+      ]
+    },
+    "MP-171": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#reactionsReplaceOwnAndRemove"
+      ]
+    },
+    "MP-376": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ui/Theme.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#togglesAllPreferences"
+      ]
+    },
+    "MP-377": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ui/Theme.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#togglesAllPreferences"
+      ]
+    },
+    "MP-378": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ui/Theme.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#defaultsAndClamping"
+      ]
+    },
+    "MP-379": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#togglesAllPreferences"
+      ]
+    },
+    "MP-383": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#defaultsAndClamping"
+      ]
+    },
+    "MP-407": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#exportAndImport"
+      ]
+    },
+    "MP-408": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/SettingsEngineTest#exportAndImport"
+      ]
+    },
+    "MP-410": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessengerRepository.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/StateCodec.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/RepositoryTest#persistsAndHydrates"
+      ]
+    },
+    "MP-431": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#roundTripsPayload"
+      ]
+    },
+    "MP-433": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#roundTripsPayload"
+      ]
+    },
+    "MP-434": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#rejectsCorruption"
+      ]
+    },
+    "MP-435": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#rejectsCorruption"
+      ]
+    },
+    "MP-436": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#rejectsCorruption"
+      ]
+    },
+    "MP-437": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#roundTripsPayload"
+      ]
+    },
+    "MP-438": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/BackupEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/BackupEngineTest#roundTripsPayload"
+      ]
+    },
+    "MP-480": {
+      "implementation": "COMPLETE",
+      "test": "COMPLETE",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/SettingsEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/StateCodec.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/StateCodecTest#roundTripsEverything"
+      ]
+    },
+    "MP-061": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Presence logic is implemented and tested locally; displaying another device's real status needs a presence service.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+      ]
+    },
+    "MP-062": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Presence logic is implemented and tested locally; real offline status needs a presence service.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+      ]
+    },
+    "MP-063": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Availability is stored and tested locally; sharing it with contacts needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#privacyControls"
+      ]
+    },
+    "MP-064": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Last-seen is tracked locally; real last-seen needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#privacyControls"
+      ]
+    },
+    "MP-065": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Alert engine tested locally; live delivery needs a presence service.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+      ]
+    },
+    "MP-066": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Alert engine tested locally; live delivery needs a presence service.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+      ]
+    },
+    "MP-067": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Per-contact watch/unwatch is tested locally; remote presence needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+      ]
+    },
+    "MP-071": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Quiet hours are enforced locally; push delivery needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#quietHoursBlockAlerts"
+      ]
+    },
+    "MP-074": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "History is retained locally; real-time events need a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+      ]
+    },
+    "MP-075": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Filtering tested locally; remote events need a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+      ]
+    },
+    "MP-076": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Date filtering tested locally; remote events need a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+      ]
+    },
+    "MP-077": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Privacy flag tested locally; enforcement needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#privacyControls"
+      ]
+    },
+    "MP-078": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Invisible mode tested locally; enforcement needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#privacyControls"
+      ]
+    },
+    "MP-084": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Deduplication tested locally; live feed needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#suppressesDuplicateAndRapidAlerts"
+      ]
+    },
+    "MP-085": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-presence-service"
+      ],
+      "note": "Interval setting tested locally; live feed needs a backend.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#suppressesDuplicateAndRapidAlerts"
+      ]
+    },
+    "MP-104": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "States are displayed and tested locally; real delivery transitions need a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ui/MessengerApp.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+      ]
+    },
+    "MP-116": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Local conversation model tested; cross-device conversations need a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+      ]
+    },
+    "MP-117": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Local send tested; delivery to another device needs a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+      ]
+    },
+    "MP-118": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Local shared thread tested; receiving from another device needs a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+      ]
+    },
+    "MP-158": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Local state transition tested; real delivered receipts need a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+      ]
+    },
+    "MP-165": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "State is consistent locally; cross-device sync needs a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+      ]
+    },
+    "MP-166": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Read state is local; sending receipts needs a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#unreadAndMarkRead"
+      ]
+    },
+    "MP-180": {
+      "implementation": "IN_PROGRESS",
+      "test": "COMPLETE",
+      "dependencies": [
+        "backend-messaging-transport"
+      ],
+      "note": "Queue recovery is local; real reconnection needs a transport.",
+      "implementationEvidence": [
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+      ],
+      "testEvidence": [
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+      ]
+    },
+    "MP-001": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-002": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-003": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-004": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-005": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-006": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "sms-or-email-provider",
+        "backend-auth"
+      ],
+      "note": "Registration/login by phone or email needs an SMS/email provider and an account backend."
+    },
+    "MP-096": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "calling-backend"
+      ],
+      "note": "Call logging needs a call transport."
+    },
+    "MP-097": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "calling-backend"
+      ],
+      "note": "Call logging needs a call transport."
+    },
+    "MP-181": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-182": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-183": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-184": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-185": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-186": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-187": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-188": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-189": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-190": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-191": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-192": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-193": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-194": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-195": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-196": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-197": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-198": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-199": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-200": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-201": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-202": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-203": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-204": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-205": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-206": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-207": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-208": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-209": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-210": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-211": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-212": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-213": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-214": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-215": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-216": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-217": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-218": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-219": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-220": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-221": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-222": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-223": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-224": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-225": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-226": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-227": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-228": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-229": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-230": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Voice messages and calling need media/calling infrastructure."
+    },
+    "MP-266": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-267": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-268": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-269": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-270": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-271": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-272": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-273": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-274": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-275": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-276": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-277": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-278": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-279": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-280": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-281": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-282": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-283": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-284": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-285": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-286": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-287": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-288": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-289": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-290": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-291": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-292": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-293": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-294": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-295": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-296": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-297": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-298": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-299": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-300": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-301": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-302": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-303": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-304": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-305": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-306": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-307": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-308": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-309": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-310": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "object-storage",
+        "backend-messaging-transport"
+      ],
+      "note": "Media, files, statuses and stories need storage and a transport."
+    },
+    "MP-311": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-312": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-313": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-314": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-315": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-316": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-317": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-318": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-319": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-320": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-321": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-322": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-323": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-324": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-325": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-326": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-327": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-328": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-329": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-330": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-331": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-332": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-333": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-334": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-335": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-336": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-337": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-338": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-339": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-340": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-341": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-342": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-343": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-344": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-345": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-346": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-347": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-348": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-349": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-350": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "e2ee-protocol",
+        "backend-key-directory"
+      ],
+      "note": "End-to-end encryption needs a key directory and protocol; only password hashing is implemented."
+    },
+    "MP-443": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-444": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-445": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-446": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-447": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-448": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-449": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-450": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "backend-sync-service"
+      ],
+      "note": "Cross-device sync and linked devices need a sync service."
+    },
+    "MP-451": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-452": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-453": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-454": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-455": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-456": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-457": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-458": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-459": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-460": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-461": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-462": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-463": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-464": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-465": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "push-notification-service"
+      ],
+      "note": "Push notifications need FCM/APNs credentials and a server."
+    },
+    "MP-496": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-497": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-498": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-499": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-500": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-501": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-502": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-503": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-504": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-505": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-506": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-507": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-508": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-509": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-510": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-511": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-512": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-513": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-514": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-515": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "ai-service"
+      ],
+      "note": "AI features need an inference service; no provider is configured."
+    },
+    "MP-571": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-572": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-573": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-574": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-575": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-576": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-577": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-578": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-579": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-580": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-581": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-582": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-583": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-584": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    },
+    "MP-585": {
+      "implementation": "BLOCKED",
+      "test": "NOT_STARTED",
+      "dependencies": [
+        "media-backend",
+        "calling-backend"
+      ],
+      "note": "Advanced messaging/calling features need backend infrastructure."
+    }
+  }
+}
