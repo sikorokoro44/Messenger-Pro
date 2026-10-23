@@ -9,10 +9,10 @@ import com.sikorokoro44.messengerpro.model.Session
  */
 class AuthEngine(private val clock: () -> Long = System::currentTimeMillis) {
 
-    data class Result<T>(val ok: Boolean, val value: T? = null, val error: String? = null) {
+    data class Result<out T>(val ok: Boolean, val value: T? = null, val error: String? = null) {
         companion object {
-            fun <T> success(value: T) = Result(true, value, null)
-            fun <T> failure(error: String) = Result(false, null, error)
+            fun <T> success(value: T): Result<T> = Result(true, value, null)
+            fun failure(error: String): Result<Nothing> = Result(false, null, error)
         }
     }
 
