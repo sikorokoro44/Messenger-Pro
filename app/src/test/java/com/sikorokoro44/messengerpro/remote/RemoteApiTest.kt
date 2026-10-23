@@ -61,7 +61,7 @@ class RemoteApiTest {
         assertEquals("msg-1", sent.id)
         assertEquals("SENT", sent.state)
         assertEquals(1, sent.reactions.size)
-        assertEquals("Bearer tok", transport.calls[0].token)
+        assertEquals("tok", transport.calls[0].token)
         assertTrue(transport.calls[0].url.startsWith("https://server.test/v1/messages"))
         assertTrue(transport.calls[0].body!!.contains("\"clientId\":\"c1\""))
     }
