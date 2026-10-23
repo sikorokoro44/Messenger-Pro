@@ -87,6 +87,7 @@ private fun AuthScreen(controller: MessengerController) {
     var username by remember { mutableStateOf("") }
     var displayName by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var serverUrl by remember { mutableStateOf(controller.serverUrl().orEmpty()) }
     var error by remember { mutableStateOf<String?>(null) }
 
     Column(

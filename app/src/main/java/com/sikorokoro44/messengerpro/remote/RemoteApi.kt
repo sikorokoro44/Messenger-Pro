@@ -146,14 +146,14 @@ class RemoteApi(baseUrl: String, private val transport: RemoteTransport) {
         message(Json.obj(Json.obj(call("POST", "/v1/messages/$messageId/read", token, null))["message"]))
 
     fun edit(token: String, messageId: String, body: String): RemoteMessage =
-        message(Json.obj(Json.obj(call("PATCH", "/v1/messages/$messageId", token, mapOf("body" to body))["message"])))
+        message(Json.obj(Json.obj(call("PATCH", "/v1/messages/$messageId", token, mapOf("body" to body)))["message"]))
 
     fun delete(token: String, messageId: String, forEveryone: Boolean = true) {
         call("DELETE", "/v1/messages/$messageId?forEveryone=${if (forEveryone) 1 else 0}", token, null)
     }
 
     fun react(token: String, messageId: String, emoji: String): RemoteMessage =
-        message(Json.obj(Json.obj(call("POST", "/v1/messages/$messageId/reactions", token, mapOf("emoji" to emoji))["message"])))
+        message(Json.obj(Json.obj(call("POST", "/v1/messages/$messageId/reactions", token, mapOf("emoji" to emoji)))["message"]))
 
     fun unreact(token: String, messageId: String): RemoteMessage =
         message(Json.obj(Json.obj(call("DELETE", "/v1/messages/$messageId/reactions", token, null))["message"]))
@@ -166,7 +166,7 @@ class RemoteApi(baseUrl: String, private val transport: RemoteTransport) {
         Json.arr(Json.obj(call("GET", "/v1/threads", token, null))["threads"]).map(::thread)
 
     fun presence(token: String, state: String, availability: String = "Available"): RemotePresence =
-        presenceValue(Json.obj(Json.obj(call("POST", "/v1/presence", token, mapOf("state" to state, "availability" to availability))["presence"])))
+        presenceValue(Json.obj(Json.obj(call("POST", "/v1/presence", token, mapOf("state" to state, "availability" to availability)))["presence"]))
 
     fun presence(token: String, accountId: String): RemotePresence? {
         val result = Json.obj(call("GET", "/v1/presence/$accountId", token, null))
