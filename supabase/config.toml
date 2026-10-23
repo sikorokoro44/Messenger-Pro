@@ -1,0 +1,7 @@
+project_id = "jwrpxkuvtygdvsitcomy"
+
+[functions.messenger-api]
+enabled = true
+verify_jwt = false
+import_map = "./functions/messenger-api/deno.json"
+entrypoint = "./functions/messenger-api/index.ts"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Messenger Pro</string>
+    <string name="tagline">Private, reliable messaging</string>
+    <string name="sign_in">Sign in</string>
+    <string name="register">Create account</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="display_name">Display name</string>
+    <string name="send">Send</string>
+    <string name="message_hint">Message</string>
+    <string name="contacts">Contacts</string>
+    <string name="chats">Chats</string>
+    <string name="activity">Activity</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Log out</string>
+    <string name="search">Search</string>
+    <string name="no_conversations">No conversations yet</string>
+    <string name="no_contacts">No contacts yet</string>
+    <string name="add_contact">Add contact</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="block">Block</string>
+    <string name="unblock">Unblock</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="reply">Reply</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="fixture_status">Fixture status</string>
+</resources>

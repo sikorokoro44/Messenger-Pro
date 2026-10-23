@@ -1,0 +1,114 @@
+name: Messenger Pro CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx2048m
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify fixture registry
+        run: node tools/verify-registry.mjs
+
+      - name: Set up Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Unit tests
+        run: gradle --no-daemon testDebugUnitTest
+
+      - name: Assemble debug APK
+        run: gradle --no-daemon assembleDebug
+
+      - name: Verify APK identity
+        run: |
+          set -euo pipefail
+          AAPT="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -n1)/aapt"
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          test -f "$APK"
+          "$AAPT" dump badging "$APK" > badging.txt
+          grep -q "package: name='com.sikorokoro44.messengerpro'" badging.txt
+          grep -q "application-label:'Messenger Pro'" badging.txt
+          grep -q "application-icon" badging.txt
+          grep -E "^(package|application-label|application-icon|sdkVersion|targetSdkVersion)" badging.txt
+          sha256sum "$APK" | tee apk.sha256
+          stat -c '%s bytes' "$APK" | tee apk.size
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-results
+          path: app/build/test-results/testDebugUnitTest/*.xml
+          if-no-files-found: warn
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: messenger-pro-debug-apk
+          path: |
+            app/build/outputs/apk/debug/app-debug.apk
+            apk.sha256
+            apk.size
+            badging.txt
+
+      - name: Publish release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: messenger-pro-build-${{ github.run_id }}
+          name: Messenger Pro build ${{ github.run_number }}
+          body: |
+            Automated build of Messenger Pro from ${{ github.sha }}.
+            Fixture status is recorded in feature-registry.json; only COMPLETE entries have test evidence.
+          files: |
+            app/build/outputs/apk/debug/app-debug.apk
+            apk.sha256
+          fail_on_unmatched_files: true
+
+      - name: Verify public release download
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          TAG="messenger-pro-build-${{ github.run_id }}"
+          URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/app-debug.apk"
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            if curl -fsSL "$URL" -o downloaded.apk; then break; fi
+            echo "release asset not ready (attempt $attempt)"; sleep 6
+          done
+          test -s downloaded.apk
+          LOCAL=$(cut -d' ' -f1 apk.sha256)
+          REMOTE=$(sha256sum downloaded.apk | cut -d' ' -f1)
+          echo "local  $LOCAL"
+          echo "remote $REMOTE"
+          test "$LOCAL" = "$REMOTE"
+          echo "PUBLIC_APK_URL=$URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "SHA256=$REMOTE" >> "$GITHUB_STEP_SUMMARY"
+          echo "SIZE=$(stat -c %s downloaded.apk) bytes" >> "$GITHUB_STEP_SUMMARY"

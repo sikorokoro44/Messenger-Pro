@@ -1,0 +1,124 @@
+name: Messenger Pro Supabase Backend CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['supabase/**', '.github/workflows/backend-ci.yml']
+  pull_request:
+    paths: ['supabase/**', '.github/workflows/backend-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  SUPABASE_PROJECT_REF: jwrpxkuvtygdvsitcomy
+  FUNCTION_URL: https://jwrpxkuvtygdvsitcomy.supabase.co/functions/v1/messenger-api
+
+jobs:
+  test:
+    name: SQL and Edge Function checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          command -v psql >/dev/null || { sudo apt-get update; sudo apt-get install -y postgresql-client; }
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Type-check Edge Function
+        run: deno check --config supabase/functions/messenger-api/deno.json supabase/functions/messenger-api/index.ts
+
+      - name: Run migration and SQL assertions
+        env:
+          PGPASSWORD: postgres
+        run: |
+          set -euo pipefail
+          PSQL="psql -h 127.0.0.1 -U postgres -d postgres -v ON_ERROR_STOP=1 -q"
+          $PSQL -f supabase/tests/sql/bootstrap.sql
+          $PSQL -f supabase/migrations/20261024000100_messenger_schema.sql
+          $PSQL -f supabase/tests/sql/verify.sql
+
+      - name: Syntax-check integration script
+        run: node --check supabase/scripts/integration.mjs
+
+  deploy:
+    name: Deploy and live integration test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check deployment secrets
+        if: env.SUPABASE_ACCESS_TOKEN == '' || env.SUPABASE_DB_PASSWORD == ''
+        run: |
+          echo "::warning::SUPABASE_ACCESS_TOKEN or SUPABASE_DB_PASSWORD is missing; Supabase deployment and live integration checks were skipped."
+
+      - name: Set up Supabase CLI
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Link Supabase project
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: supabase link --project-ref "$SUPABASE_PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
+
+      - name: Push database migrations
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: supabase db push --password "$SUPABASE_DB_PASSWORD" --include-all
+
+      - name: Deploy messenger-api function
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: |
+          supabase functions deploy messenger-api \
+            --project-ref "$SUPABASE_PROJECT_REF" \
+            --no-verify-jwt
+
+      - name: Wait for function health
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            if curl -fsS "$FUNCTION_URL/healthz"; then exit 0; fi
+            echo "function not ready (attempt $attempt)"; sleep 5
+          done
+          exit 1
+
+      - name: Live integration test - send
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: >-
+          node supabase/scripts/integration.mjs send
+          --url "$FUNCTION_URL"
+          --state "$RUNNER_TEMP/messenger-integration.json"
+
+      - name: Live integration test - verify
+        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
+        run: >-
+          node supabase/scripts/integration.mjs verify
+          --url "$FUNCTION_URL"
+          --state "$RUNNER_TEMP/messenger-integration.json"
