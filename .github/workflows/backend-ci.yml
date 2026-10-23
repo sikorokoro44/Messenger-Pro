@@ -1,0 +1,75 @@
+name: Messenger Pro Backend CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['server/**', '.github/workflows/backend-ci.yml']
+  pull_request:
+    paths: ['server/**', '.github/workflows/backend-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Backend tests
+        working-directory: server
+        run: node --test test/*.test.mjs
+      - name: Boot and probe
+        working-directory: server
+        env:
+          AUTH_SECRET: ci-secret
+          PORT: '8089'
+          DATABASE_PATH: /tmp/mp-ci.db
+        run: |
+          node --experimental-sqlite src/index.mjs & pid=$!
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8089/healthz; then break; fi
+            sleep 1
+          done
+          kill $pid
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      AUTH_SECRET_VALUE: ${{ secrets.AUTH_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skip notice
+        if: env.FLY_API_TOKEN == ''
+        run: echo "::notice::FLY_API_TOKEN is not configured; backend deployment skipped."
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+        if: env.FLY_API_TOKEN != ''
+      - name: Deploy
+        if: env.FLY_API_TOKEN != ''
+        working-directory: server
+        run: |
+          flyctl apps create messenger-pro-backend || true
+          flyctl volumes create messenger_data --region jnb --size 1 --yes || true
+          if [ -n "$AUTH_SECRET_VALUE" ]; then
+            flyctl secrets set AUTH_SECRET="$AUTH_SECRET_VALUE" --app messenger-pro-backend
+          fi
+          flyctl deploy . --remote-only
+      - name: Verify deployment
+        if: env.FLY_API_TOKEN != ''
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS https://messenger-pro-backend.fly.dev/healthz; then
+              echo "DEPLOY_URL=https://messenger-pro-backend.fly.dev" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

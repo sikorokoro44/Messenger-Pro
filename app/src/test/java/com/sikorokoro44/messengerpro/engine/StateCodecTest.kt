@@ -47,7 +47,8 @@ class StateCodecTest {
             notificationsEnabled = false, aiEnabled = false, lowDataMode = true
         ),
         sessionToken = "token-1",
-        sessionAccountId = "acct-1"
+        sessionAccountId = "acct-1",
+        remoteNames = mapOf("acct-2" to "Bobby")
     )
 
     @Test
@@ -70,6 +71,7 @@ class StateCodecTest {
         assertTrue(decoded.settings.lowDataMode)
         assertEquals("token-1", decoded.sessionToken)
         assertEquals("acct-1", decoded.sessionAccountId)
+        assertEquals("Bobby", decoded.remoteNames["acct-2"])
     }
 
     @Test

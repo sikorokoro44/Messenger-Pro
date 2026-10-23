@@ -23,7 +23,8 @@ object StateCodec {
         val events: List<ActivityEvent> = emptyList(),
         val settings: SettingsEngine.Settings = SettingsEngine.Settings(),
         val sessionToken: String? = null,
-        val sessionAccountId: String? = null
+        val sessionAccountId: String? = null,
+        val remoteNames: Map<String, String> = emptyMap()
     )
 
     private const val VERSION = "MP-STATE-1"
@@ -66,6 +67,8 @@ object StateCodec {
                 s.lowDataMode.toString()))))
             append(US)
             append(section("session", listOf(listOf(snapshot.sessionToken, snapshot.sessionAccountId))))
+            append(US)
+            append(section("remoteNames", snapshot.remoteNames.map { listOf(it.key, it.value) }))
         }
         return "$VERSION$US${Hashing.sha256(body)}$US$body"
     }
@@ -151,7 +154,10 @@ object StateCodec {
         val sessionRow = rows("session").firstOrNull()
         val sessionToken = sessionRow?.at(0)?.takeIf { it.isNotEmpty() }
         val sessionAccountId = sessionRow?.at(1)?.takeIf { it.isNotEmpty() }
-        return Snapshot(accounts, conversations, messages, contacts, events, settings, sessionToken, sessionAccountId)
+        val remoteNames = rows("remoteNames")
+            .mapNotNull { row -> row.at(0)?.takeIf { it.isNotEmpty() }?.let { it to (row.at(1) ?: "") } }
+            .toMap()
+        return Snapshot(accounts, conversations, messages, contacts, events, settings, sessionToken, sessionAccountId, remoteNames)
     }
 
     private fun esc(value: String?): String {

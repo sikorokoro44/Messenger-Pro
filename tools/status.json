@@ -876,14 +876,19 @@
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Presence logic is implemented and tested locally; real offline status needs a presence service.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-063": {
@@ -918,42 +923,57 @@
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Alert engine tested locally; live delivery needs a presence service.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-066": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Alert engine tested locally; live delivery needs a presence service.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#alertsWatchersOnChange",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-067": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Per-contact watch/unwatch is tested locally; remote presence needs a backend.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-071": {
@@ -988,28 +1008,38 @@
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Filtering tested locally; remote events need a backend.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-076": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-presence-service"
+        "backend-deployment"
       ],
-      "note": "Date filtering tested locally; remote events need a backend.",
+      "note": "Backend presence endpoints and event stream are implemented and tested; the Android UI still shows local presence until a server is connected.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/PresenceEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/PresenceEngineTest#filtersAndClearsAlerts",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-077": {
@@ -1072,15 +1102,26 @@
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "States are displayed and tested locally; real delivery transitions need a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
         "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/ui/MessengerApp.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerApp.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-116": {
@@ -1101,84 +1142,150 @@
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "Local send tested; delivery to another device needs a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-118": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "Local shared thread tested; receiving from another device needs a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-158": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "Local state transition tested; real delivered receipts need a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-165": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "State is consistent locally; cross-device sync needs a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#sharedThreadSeesBothDirections",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-166": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "Read state is local; sending receipts needs a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#unreadAndMarkRead"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#unreadAndMarkRead",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-180": {
       "implementation": "IN_PROGRESS",
       "test": "COMPLETE",
       "dependencies": [
-        "backend-messaging-transport"
+        "backend-deployment"
       ],
-      "note": "Queue recovery is local; real reconnection needs a transport.",
+      "note": "Client and zero-dependency backend are implemented and unit tested. Real cross-device use needs a deployed server URL; no hosting secret is configured yet.",
       "implementationEvidence": [
-        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt"
+        "app/src/main/java/com/sikorokoro44/messengerpro/engine/MessagingEngine.kt",
+        "server/src/app.mjs",
+        "server/src/store.mjs",
+        "server/src/db.mjs",
+        "server/src/auth.mjs",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteApi.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngine.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/remote/HttpRemoteTransport.kt",
+        "app/src/main/java/com/sikorokoro44/messengerpro/ui/MessengerController.kt"
       ],
       "testEvidence": [
-        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes"
+        "app/src/test/java/com/sikorokoro44/messengerpro/engine/MessagingEngineTest#queuesWhileOfflineAndFlushes",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteApiTest.kt#sendsIdempotentMessagesAndParsesThem",
+        "app/src/test/java/com/sikorokoro44/messengerpro/remote/RemoteSyncEngineTest.kt#mergesRemoteMessagesWithoutDuplicatingClientId",
+        "server/test/api.test.mjs"
       ]
     },
     "MP-001": {

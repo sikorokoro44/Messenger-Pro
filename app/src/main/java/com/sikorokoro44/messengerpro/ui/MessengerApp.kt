@@ -37,7 +37,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -124,13 +129,28 @@ private fun AuthScreen(controller: MessengerController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             modifier = Modifier.fillMaxWidth()
         )
+        Spacer(Modifier.height(8.dp))
+        OutlinedTextField(
+            value = serverUrl,
+            onValueChange = { serverUrl = it; error = null },
+            label = { Text("Server URL (optional)") },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
+            modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            "Leave blank for offline mode. A server enables real cross-device messaging.",
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
         Spacer(Modifier.height(16.dp))
         Button(
             onClick = {
-                error = if (creating) {
-                    controller.register(username.trim(), displayName.trim(), password)
+                error = if (serverUrl.isBlank()) {
+                    if (creating) controller.register(username.trim(), displayName.trim(), password)
+                    else controller.login(username.trim(), password)
                 } else {
-                    controller.login(username.trim(), password)
+                    controller.connectServer(serverUrl.trim(), creating, username.trim(), displayName.trim(), password)
                 }
             },
             modifier = Modifier.fillMaxWidth()
@@ -158,6 +178,13 @@ private fun AuthScreen(controller: MessengerController) {
 private fun MainShell(controller: MessengerController, account: Account) {
     var tab by remember { mutableStateOf(Tab.CHATS) }
     var openChat by remember { mutableStateOf<String?>(null) }
+
+    LaunchedEffect(account.id) {
+        while (true) {
+            if (controller.isRemote()) withContext(Dispatchers.IO) { controller.pollRemote() }
+            delay(4000)
+        }
+    }
 
     val open = openChat
     if (open != null) {
@@ -442,12 +469,29 @@ private fun ActivityRow(event: ActivityEvent) {
 @Composable
 private fun SettingsScreen(controller: MessengerController, account: Account) {
     val version = controller.version
+    val scope = rememberCoroutineScope()
     val settings = remember(version) { controller.repo.settingsEngine.settings() }
     val counts = remember(version) { controller.fixtureCounts() }
     val categories = remember(version) { controller.categoryCounts() }
 
     LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(16.dp)) {
         item {
+            Text("Server", style = MaterialTheme.typography.titleMedium)
+            val server = controller.serverUrl()
+            Text(if (server == null) "Offline mode - local data only" else server, style = MaterialTheme.typography.bodySmall)
+            controller.remoteStatus?.let {
+                Text(it, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(
+                    onClick = { scope.launch(Dispatchers.IO) { controller.refreshRemote() } },
+                    enabled = server != null
+                ) { Text("Sync now") }
+                if (server != null) {
+                    Button(onClick = { controller.disconnectServer() }) { Text("Disconnect") }
+                }
+            }
+            Spacer(Modifier.height(16.dp))
             Text("Appearance", style = MaterialTheme.typography.titleMedium)
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 SettingsEngine.Theme.values().forEach { theme ->

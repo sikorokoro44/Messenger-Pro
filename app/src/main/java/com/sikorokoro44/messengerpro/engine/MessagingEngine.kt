@@ -212,6 +212,53 @@ class MessagingEngine(private val clock: () -> Long = System::currentTimeMillis)
         val c = conversations[key] ?: Conversation(threadId(ownerId, participantId), ownerId, participantId)
         conversations[key] = transform(c)
     }
+    fun upsertRemote(message: Message): Message {
+        val thread = message.conversationId.ifBlank { threadId(message.senderId, message.senderId) }
+        val list = messagesByThread.getOrPut(thread) { mutableListOf() }
+        val byId = list.indexOfFirst { it.id == message.id }
+        val index = if (byId >= 0) byId else if (message.clientId.isNotBlank()) {
+            list.indexOfFirst { it.clientId == message.clientId }
+        } else -1
+        if (index >= 0) list[index] = message else list.add(message)
+        list.sortBy { it.createdAt }
+        return message
+    }
+
+    fun setUnread(ownerId: String, participantId: String, unread: Int) =
+        updateConversation(ownerId, participantId) { it.copy(unread = unread.coerceAtLeast(0)) }
+
+    fun enqueue(senderId: String, recipientId: String, body: String, clientId: String, replyToId: String? = null): Message {
+        val thread = threadId(senderId, recipientId)
+        messagesByThread[thread]?.firstOrNull { it.clientId == clientId }?.let { return it }
+        val message = Message(
+            id = "msg-" + (++sequence) + "-" + Hashing.randomHex(4),
+            clientId = clientId,
+            conversationId = thread,
+            senderId = senderId,
+            body = body.trim(),
+            createdAt = clock(),
+            state = DeliveryState.QUEUED,
+            replyToId = replyToId
+        )
+        messagesByThread.getOrPut(thread) { mutableListOf() }.add(message)
+        bumpUnread(recipientId, senderId)
+        return message
+    }
+
+    fun pending(): List<Message> = exportMessages().filter {
+        it.state == DeliveryState.QUEUED || it.state == DeliveryState.FAILED
+    }
+
+    fun markState(messageId: String, state: DeliveryState) {
+        for (thread in messagesByThread.values) {
+            val index = thread.indexOfFirst { it.id == messageId }
+            if (index >= 0) {
+                thread[index] = thread[index].copy(state = state)
+                return
+            }
+        }
+    }
+
     fun exportMessages(): List<Message> = messagesByThread.values.flatten()
 
     fun importMessages(list: List<Message>) {

@@ -23,6 +23,8 @@ class MessengerRepository(
     var activeSession: Session? = null
         private set
 
+    private val remoteNames = LinkedHashMap<String, String>()
+
     fun register(username: String, displayName: String, password: String): AuthEngine.Result<Account> {
         val result = auth.register(username, displayName, password)
         result.value?.let { activity.record(it.id, "ACCOUNT_CREATED", "Registered ${it.username}") }
@@ -81,7 +83,8 @@ class MessengerRepository(
         events = activity.exportEvents(),
         settings = settingsEngine.settings(),
         sessionToken = activeSession?.token,
-        sessionAccountId = activeSession?.accountId
+        sessionAccountId = activeSession?.accountId,
+        remoteNames = remoteNames.toMap()
     )
 
     fun restore(snapshot: StateCodec.Snapshot) {
@@ -94,6 +97,31 @@ class MessengerRepository(
         if (snapshot.sessionToken != null) {
             activeSession = Session(snapshot.sessionToken, snapshot.sessionAccountId ?: "", clock())
         }
+        remoteNames.clear()
+        remoteNames.putAll(snapshot.remoteNames)
+    }
+
+    fun rememberRemoteAccount(id: String, displayName: String) {
+        if (id.isNotBlank()) remoteNames[id] = displayName
+    }
+
+    fun remoteName(id: String): String? = remoteNames[id]
+
+    fun connectRemote(token: String, id: String, username: String, displayName: String) {
+        auth.importAccount(
+            Account(
+                id = id,
+                username = username,
+                displayName = displayName,
+                passwordHash = "remote",
+                salt = "remote",
+                createdAt = clock(),
+                status = "ACTIVE"
+            )
+        )
+        rememberRemoteAccount(id, displayName)
+        activeSession = Session(token, id, clock())
+        presence.update(id, com.sikorokoro44.messengerpro.model.PresenceState.ONLINE)
     }
 
     fun persist(): String = StateCodec.encode(snapshot())

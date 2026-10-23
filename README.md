@@ -36,6 +36,25 @@ provider, calling/media infrastructure, object storage, E2E key directory, sync
 service, push notifications or an AI service). This repository does **not**
 claim 600/600 completion.
 
+## Optional real backend
+
+`server/` contains a zero-dependency Node 22 backend (built-in HTTP, crypto and
+SQLite) with real registration, sessions, contacts, messaging, delivery and read
+receipts, reactions, presence, threads, polling and an SSE event stream. The
+Android app can use it from the sign-in screen: enter a server URL and either
+sign in or register. Leave the URL blank to keep using offline local mode.
+
+```bash
+cd server
+node --test test/*.test.mjs
+node --experimental-sqlite src/index.mjs
+```
+
+The backend is Dockerised and `server/fly.toml` targets Fly.io. CI runs the
+backend tests on every change and deploys only when the `FLY_API_TOKEN`
+repository secret exists. Until a server is deployed the transport-dependent
+fixtures stay `IN_PROGRESS`; see `server/README.md`.
+
 ## Build and test
 
 CI uses JDK 17, Gradle 8.7 and the Android SDK on the GitHub runner:
@@ -68,10 +87,13 @@ node tools/generate-registry.mjs
 - `engine/BackupEngine.kt` - versioned, checksummed backup envelope.
 - `engine/SettingsEngine.kt` - theme, accent, font scale, privacy and languages.
 - `engine/StateCodec.kt` + `engine/MessengerRepository.kt` - persistence and wiring.
+- `remote/` + `ui/MessengerController.kt` - HTTP client, JSON codec, event replay
+  and server-mode wiring; `server/` - zero-dependency Node backend.
 
 ## Known external blockers
 
-Real cross-device messaging, presence, calling, media, end-to-end encryption,
-push notifications, cross-device sync and AI features need infrastructure that
-is not configured. Their fixtures are marked `BLOCKED` with the missing
+Cross-device messaging and presence now have a tested backend and client, but they
+stay `IN_PROGRESS` until a server is actually deployed (hosting credentials are
+not configured). Calling, media, end-to-end encryption, push notifications and AI
+features still need external services and remain `BLOCKED` with the missing
 dependency recorded rather than being reported as done.
