@@ -27,9 +27,9 @@ class ActivityEngineTest {
         activity.record("a", "LOGIN", "now")
         now += 2 * 86_400_000L
         activity.record("a", "MESSAGE_SENT", "later")
-        assertEquals(2, activity.last30Days("a"))
-        assertEquals(1, activity.last24Hours("a"))
-        assertEquals(2, activity.last7Days("a"))
+        assertEquals(2, activity.last30Days("a").size)
+        assertEquals(1, activity.last24Hours("a").size)
+        assertEquals(2, activity.last7Days("a").size)
         assertEquals(1, activity.dailySummary("a")["MESSAGE_SENT"])
         assertEquals(1, activity.weeklySummary("a")["LOGIN"])
         assertEquals(1, activity.monthlySummary("a")["LOGIN"])

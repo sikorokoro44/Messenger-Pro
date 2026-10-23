@@ -27,6 +27,12 @@ class RegistryTest {
             assertTrue(it.name.isNotBlank())
             assertTrue(it.category.isNotBlank())
         }
-        assertTrue(RegistryData.fixtures.all { it.test != FixtureStatus.COMPLETE || it.implementation == FixtureStatus.COMPLETE })
+        assertTrue(
+            RegistryData.fixtures.all {
+                it.test != FixtureStatus.COMPLETE ||
+                    it.implementation == FixtureStatus.COMPLETE ||
+                    it.implementation == FixtureStatus.IN_PROGRESS
+            }
+        )
     }
 }

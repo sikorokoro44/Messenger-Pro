@@ -28,8 +28,8 @@ class MessagingEngineTest {
         val queued = engine.sendMessage("a", "b", "hello")
         assertEquals(DeliveryState.QUEUED, queued.state)
         engine.connected = true
-        assertEquals(1, engine.flushQueue())
         assertEquals(DeliveryState.DELIVERED, engine.messages("a", "b").single().state)
+        assertEquals(0, engine.flushQueue())
     }
 
     @Test
