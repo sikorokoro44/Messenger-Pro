@@ -12,8 +12,8 @@ permissions:
   contents: read
 
 env:
-  SUPABASE_PROJECT_REF: wsmrfcxtjkuhdayezczk
-  FUNCTION_URL: https://wsmrfcxtjkuhdayezczk.supabase.co/functions/v1/messenger-api
+  SUPABASE_PROJECT_REF: dflzzyeuntdmcarroype
+  FUNCTION_URL: https://dflzzyeuntdmcarroype.supabase.co/functions/v1/messenger-api
 
 jobs:
   test:

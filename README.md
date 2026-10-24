@@ -39,7 +39,7 @@ claim 600/600 completion.
 ## Supabase backend
 
 The production backend lives in `supabase/` and runs on the existing Supabase
-project `wsmrfcxtjkuhdayezczk`:
+project `dflzzyeuntdmcarroype`:
 
 - `supabase/migrations/20261024000100_messenger_schema.sql` defines the
   PostgreSQL schema, RLS policies, triggers and `SECURITY DEFINER` RPCs for
@@ -57,7 +57,7 @@ project `wsmrfcxtjkuhdayezczk`:
 The sign-in screen pre-fills the deployed function URL:
 
 ```
-https://wsmrfcxtjkuhdayezczk.supabase.co/functions/v1/messenger-api
+https://dflzzyeuntdmcarroype.supabase.co/functions/v1/messenger-api
 ```
 
 Clearing the field keeps the app in offline local mode. Access tokens are

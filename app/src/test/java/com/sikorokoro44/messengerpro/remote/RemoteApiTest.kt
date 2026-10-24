@@ -19,7 +19,7 @@ class RemoteApiTest {
         assertEquals("https://example.com", RemoteApi.normalize(" example.com/ "))
         assertEquals("http://127.0.0.1:8080", RemoteApi.normalize("http://127.0.0.1:8080/"))
         assertEquals(
-            "https://wsmrfcxtjkuhdayezczk.supabase.co/functions/v1/messenger-api",
+            "https://dflzzyeuntdmcarroype.supabase.co/functions/v1/messenger-api",
             RemoteApi.DEFAULT_SERVER_URL
         )
         try {

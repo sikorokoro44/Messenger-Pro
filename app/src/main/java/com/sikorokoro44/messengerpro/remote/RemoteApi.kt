@@ -67,7 +67,7 @@ class RemoteApi(baseUrl: String, private val transport: RemoteTransport) {
 
     companion object {
         const val DEFAULT_SERVER_URL =
-            "https://wsmrfcxtjkuhdayezczk.supabase.co/functions/v1/messenger-api"
+            "https://dflzzyeuntdmcarroype.supabase.co/functions/v1/messenger-api"
 
         fun normalize(raw: String): String {
             var value = raw.trim()
