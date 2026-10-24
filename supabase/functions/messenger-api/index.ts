@@ -554,18 +554,18 @@ function streamEvents(client: Client, initialCursor: number): Response {
   const encoder = new TextEncoder();
   let cursor = initialCursor;
   let done = false;
-  let ticker = 0;
-  let heartbeat = 0;
-  let closer = 0;
+  let ticker: number | undefined;
+  let heartbeat: number | undefined;
+  let closer: number | undefined;
 
   const stream = new ReadableStream({
     start(controller) {
       const stop = () => {
         if (done) return;
         done = true;
-        clearInterval(ticker);
-        clearInterval(heartbeat);
-        clearTimeout(closer);
+        if (ticker !== undefined) clearInterval(ticker);
+        if (heartbeat !== undefined) clearInterval(heartbeat);
+        if (closer !== undefined) clearTimeout(closer);
         try {
           controller.close();
         } catch {
@@ -590,17 +590,17 @@ function streamEvents(client: Client, initialCursor: number): Response {
         }
       };
       void pump();
-      ticker = setInterval(() => void pump(), 1000);
+      ticker = setInterval(() => void pump(), 1000) as unknown as number;
       heartbeat = setInterval(() => {
         if (!done) controller.enqueue(encoder.encode(": ping\n\n"));
-      }, 15000);
-      closer = setTimeout(stop, 25000);
+      }, 15000) as unknown as number;
+      closer = setTimeout(stop, 25000) as unknown as number;
     },
     cancel() {
       done = true;
-      clearInterval(ticker);
-      clearInterval(heartbeat);
-      clearTimeout(closer);
+      if (ticker !== undefined) clearInterval(ticker);
+      if (heartbeat !== undefined) clearInterval(heartbeat);
+      if (closer !== undefined) clearTimeout(closer);
     },
   });
 

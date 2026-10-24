@@ -63,7 +63,7 @@ jobs:
 
   deploy:
     name: Deploy and live integration test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch'
     needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 25
@@ -74,33 +74,30 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check deployment secrets
-        if: env.SUPABASE_ACCESS_TOKEN == '' || env.SUPABASE_DB_PASSWORD == ''
         run: |
-          echo "::warning::SUPABASE_ACCESS_TOKEN or SUPABASE_DB_PASSWORD is missing; Supabase deployment and live integration checks were skipped."
+          if [ -z "${SUPABASE_ACCESS_TOKEN:-}" ] || [ -z "${SUPABASE_DB_PASSWORD:-}" ]; then
+            echo "::error::SUPABASE_ACCESS_TOKEN or SUPABASE_DB_PASSWORD is missing from GitHub Actions secrets; cannot deploy or run live integration tests."
+            exit 1
+          fi
 
       - name: Set up Supabase CLI
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         uses: supabase/setup-cli@v1
         with:
           version: latest
 
       - name: Link Supabase project
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: supabase link --project-ref "$SUPABASE_PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
 
       - name: Push database migrations
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: supabase db push --password "$SUPABASE_DB_PASSWORD" --include-all
 
       - name: Deploy messenger-api function
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: |
           supabase functions deploy messenger-api \
             --project-ref "$SUPABASE_PROJECT_REF" \
             --no-verify-jwt
 
       - name: Wait for function health
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: |
           set -euo pipefail
           for attempt in $(seq 1 30); do
@@ -110,14 +107,12 @@ jobs:
           exit 1
 
       - name: Live integration test - send
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: >-
           node supabase/scripts/integration.mjs send
           --url "$FUNCTION_URL"
           --state "$RUNNER_TEMP/messenger-integration.json"
 
       - name: Live integration test - verify
-        if: env.SUPABASE_ACCESS_TOKEN != '' && env.SUPABASE_DB_PASSWORD != ''
         run: >-
           node supabase/scripts/integration.mjs verify
           --url "$FUNCTION_URL"
